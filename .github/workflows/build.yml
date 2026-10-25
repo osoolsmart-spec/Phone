@@ -7,10 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      -       - run: |
-          if [ ! -d PhoneRepairAPK ]; then
-            for z in *.zip; do unzip -o "$z"; done
-          fi
+      - run: unzip PhoneRepairAPK-project.zip
       - uses: actions/setup-java@v4
         with: { distribution: temurin, java-version: 17 }
       - uses: gradle/actions/setup-gradle@v4
